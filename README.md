@@ -51,4 +51,4 @@ This is a simple image recognition project that utilizes a pre-trained ResNet-50
 
 ## License
 
-This project is licensed under the MIT License - please refer to the [LICENSE](https://github.com/saadjoe/image-recognition/LICENSE) file for details.
+This project is licensed under the MIT License - please refer to the [LICENSE](https://github.com/saadjoe/image-recognition/blob/main/LICENSE) file for details.
