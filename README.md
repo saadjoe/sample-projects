@@ -1,6 +1,6 @@
 # Image Recognition Project
 
-This is a simple image recognition project that utilizes a pre-trained ResNet-50 model to classify images and display the predicted class. It's powered by [Flet](https://github.com/fletorg/flet) for the user interface.
+This is a simple image recognition project that utilizes a pre-trained ResNet-50 model to classify images and display the predicted class. It's powered by [Flet](https://github.com/flet-dev/flet) for the user interface.
 
 ## Table of Contents
 
