@@ -1,39 +1,36 @@
-import torch
-from torchvision.models import resnet50, ResNet50_Weights
-from torchvision import transforms
+from typing import Any
+
 from PIL import Image
-import requests
+from torch import Tensor, no_grad
+from torchvision import transforms
+from torchvision.models.resnet import ResNet
 
-def predict_image(image_path: str) -> str:
-    # Load the ResNet-50 model
-    model = resnet50(weights=ResNet50_Weights.DEFAULT)
 
+def predict_image(image_path: str, model: ResNet, class_names: list) -> str:
     # Load the image
-    image = Image.open(image_path)
+    image_obj: Image.Image = Image.open(image_path)
 
     # Preprocess the image
-    preprocess = transforms.Compose([
+    preprocess: Any = transforms.Compose([
         transforms.Resize(256),
         transforms.CenterCrop(224),
         transforms.ToTensor(),
         transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
     ])
-    image = preprocess(image)
+    image_pre: Tensor = preprocess(image_obj)
 
     # Prepare the model for inference
     model.eval()
 
     # Perform inference
-    with torch.no_grad():
-        image = image.unsqueeze(0)  # Add a batch dimension
-        outputs = model(image)
+    with no_grad():
+        image: Tensor = image_pre.unsqueeze(0)  # Add a batch dimension
+        outputs: Tensor = model(image)
 
-    # Download class labels
-    label_url = 'https://raw.githubusercontent.com/anishathalye/imagenet-simple-labels/master/imagenet-simple-labels.json'
-    response = requests.get(label_url)
-    class_names = response.json()
+    # Find the index of the maximum value along the appropriate dimension
+    max_index: Tensor = outputs.argmax(dim=1)
 
     # Convert the predicted class index to class name
-    predicted_class = class_names[outputs.argmax().item()]
+    predicted_class: str = class_names[int(max_index.item())]
 
     return predicted_class
