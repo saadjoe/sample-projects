@@ -1,30 +1,28 @@
-# Image Recognition Project
+# Sample Projects
 
-This is a simple image recognition project that utilizes a pre-trained ResNet-50 model to classify images and display the predicted class. It's powered by [Flet](https://github.com/flet-dev/flet) for the user interface.
+This repository serves as a portfolio of Python projects, primarily focused on demonstrating various AI implementations with a user interface powered by [Flet](https://github.com/flet-dev).
 
-## Table of Contents
+## Projects
 
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Project Structure](#project-structure)
-- [License](#license)
-
-## Features
-
-- Enables users to select an image for classification.
-- Displays both the selected image and the predicted class.
+- **Image Recognition:** Choose an image and predict the objects within it.
 
 ## Installation
 
-1. Clone the repository:
+To run any of the projects in this repository, follow these steps:
+
+1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/saadjoe/image-recognition.git
-   cd image-recognition
+   git clone https://github.com/saadjoe/sample-projects.git
    ```
 
-2. Install the necessary dependencies:
+2. Navigate to the project directory:
+
+   ```bash
+   cd sample-projects
+   ```
+
+3. Install the required dependencies:
 
    ```bash
    pip install -r requirements.txt
@@ -32,23 +30,27 @@ This is a simple image recognition project that utilizes a pre-trained ResNet-50
 
 ## Usage
 
-1. Launch the application:
+1. Navigate to the project:
 
    ```bash
-   python main.py
+   cd apps/<project-name>
    ```
 
-2. Choose an image for prediction.
+2. Run the project:
+
+   ```bash
+   flet run
+   ```
 
 ## Project Structure
 
-- `main.py`: The primary script responsible for running the application.
-- `image_processing.py`: Manages image processing and prediction.
-- `ui.py`: Handles user interface design and page configuration.
-- `requirements.txt`: Lists the required dependencies for the project.
+- `apps/`: The folder containing the sample projects.
+- `LICENSE`: The license file specifying terms and conditions for using the code.
 - `README.md`: The current file, serving as project documentation.
-- `LICENSE`: The license file (MIT License) specifying terms and conditions for using the code.
+- `requirements.txt`: Lists the required dependencies for the project.
 
 ## License
 
-This project is licensed under the MIT License - please refer to the [LICENSE](https://github.com/saadjoe/image-recognition/blob/main/LICENSE) file for details.
+This repository is licensed under the [MIT License](LICENSE). You are welcome to use and modify the code for your own projects. If you find this repository helpful, consider giving it a star!
+
+Thank you for exploring the **sample-projects** repository! If you have any questions or feedback, feel free to [create an issue](https://github.com/saadjoe/sample-projects/issues) or reach out to [saadjoe](https://github.com/saadjoe).
